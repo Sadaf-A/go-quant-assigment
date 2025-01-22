@@ -1,0 +1,27 @@
+/* src/components/Shared/TextInput.css */
+.text-input {
+    margin-bottom: 15px;
+  }
+  
+  .text-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .text-input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .text-input input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
