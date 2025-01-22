@@ -31,10 +31,10 @@ const TradeComponent = () => {
           <div className="flex flex-1 justify-end gap-8">
             <div className="flex items-center gap-9">
               <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Dashboard</a>
-              <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="trade.html">Trade</a>
-              <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="perf.html">Performance</a>
+              <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="trade">Trade</a>
+              <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="perf">Performance</a>
               <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Community</a>
-              <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="login.html">Login</a>
+              <a className="text-[#FFFFFF] text-sm font-medium leading-normal" href="login">Login</a>
             </div>
             <button
               className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#292929] text-[#FFFFFF] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
