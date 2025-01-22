@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 const LoginForm = () => {
   const [apiKey, setApiKey] = useState('');
   const [apiSecret, setApiSecret] = useState('');
   const navigate = useNavigate();
 
+  const authenticateUser = async (apiKey, apiSecret) => {
+    try {
+      const response = await fetch(`https://test.deribit.com/api/v2/public/auth?client_id=${apiKey}&client_secret=${apiSecret}&grant_type=client_credentials`, {
+        method: 'GET',
+      });
+      const data = await response.json();
+      
+      if (data && data.result && data.result.access_token) {
+        localStorage.setItem('accessToken', data.result.access_token);
+        alert('Authentication successful!');
+        navigate('/dashboard');
+      } else {
+        alert('Authentication failed. Please check your API Key and Secret.');
+      }
+    } catch (error) {
+      alert('Error authenticating user: ' + error.message);
+    }
+  };
+
   const handleConnect = () => {
     if (apiKey && apiSecret) {
-      localStorage.setItem('apiKey', apiKey);
-      localStorage.setItem('apiSecret', apiSecret);
-      alert('API Key and Secret saved successfully!');
-      setTimeout(navigate('/dashboard'), 2000);
+      authenticateUser(apiKey, apiSecret);
     } else {
       alert('Please enter both API Key and Secret.');
     }
