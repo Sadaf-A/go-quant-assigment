@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 export const GoQuantDashboard = () => {
   const [dashboardData, setDashboardData] = useState({
     totalValue: 0,
@@ -65,15 +65,15 @@ export const GoQuantDashboard = () => {
           </div>
           <div className="flex flex-1 justify-end gap-8">
             <div className="flex items-center gap-9">
-              {["Dashboard", "Trade", "Performance", "Community", "Login"].map((item) => (
-                <a
-                  key={item}
-                  className="text-[#FFFFFF] text-sm font-medium leading-normal"
-                  href={item === "Dashboard" ? "#" : `${item.toLowerCase()}`}
-                >
-                  {item}
-                </a>
-              ))}
+            {["Dashboard", "Trade", "Performance", "Community", "Login"].map((item) => (
+              <Link
+                key={item}
+                className="text-[#FFFFFF] text-sm font-medium leading-normal"
+                to={item === "Dashboard" ? "/" : `/${item.toLowerCase()}`}
+              >
+                {item}
+               </Link>
+            ))}
             </div>
             <div className="flex gap-2">
               {["MagnifyingGlass", "ChatCircleDots", "Bell"].map((icon, idx) => (
