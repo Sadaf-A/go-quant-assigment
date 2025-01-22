@@ -69,7 +69,7 @@ export const GoQuantDashboard = () => {
                 <a
                   key={item}
                   className="text-[#FFFFFF] text-sm font-medium leading-normal"
-                  href={item === "Dashboard" ? "#" : `${item.toLowerCase()}.html`}
+                  href={item === "Dashboard" ? "#" : `${item.toLowerCase()}`}
                 >
                   {item}
                 </a>
